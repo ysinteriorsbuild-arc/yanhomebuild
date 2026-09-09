@@ -5,8 +5,11 @@ Landing page for a local interior design + fabrication company, with a HubSpot c
 ## Placeholders to replace
 
 - **Copy** — hero, services, about, and footer text are placeholder; branding is "Yan Studio Design and Build" to match yaninteriordesign.com.
-- **Colors** — swap the palette in `styles.css` (`:root` variables) if you want a different look than the current olive/terracotta theme.
-- **Photos** — hero, service, work, before/after, and craft images are LoremFlickr placeholder photos (thematically tagged, not real project photos); replace the `background-image` URLs in `index.html` with real photography.
+- **Colors** — swap the palette in `styles.css` (`:root` variables) if you want a different look than the current black/gold/cream theme.
+- **Photos** — hero, about, service, work, before/after, and craft images are LoremFlickr placeholder photos (thematically tagged, not real project photos); replace the `background-image` URLs in `index.html` with real photography.
+- **Testimonial avatars** — the 4 hero avatars and 3 testimonial photos use pravatar.cc placeholder faces; swap for real client photos (with permission) or remove.
+- **Reviews, stats & testimonials** — the "4.9 (120+ Reviews)" style trust row, the stats band (10+ years, 250+ projects, 98%, 15+ awards), and all 3 testimonial quotes are fabricated placeholders marked `(placeholder)` inline — replace with real figures/quotes before launch, don't publish invented numbers.
+- **Top bar & footer contact info** — phone number, street address, and social links (`#` hrefs) in the top bar and footer are placeholders.
 - **HubSpot form** — in `index.html`, set `portalId` and `formId` to your real values from HubSpot: Marketing > Forms > your form > Embed code.
 - **Contact details** — the address/hours in the contact section and the `hello@yaninteriordesign.com` fallback email are placeholders.
 

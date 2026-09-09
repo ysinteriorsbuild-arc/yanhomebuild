@@ -7,26 +7,52 @@
 <meta name="description" content="Yan Studio Design and Build designs and fabricates custom interiors — from concept to built-in furniture, for homes and commercial spaces.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+<div class="topbar">
+  <div class="container topbar-inner">
+    <ul class="topbar-meta">
+      <li><span aria-hidden="true">&#128205;</span> [Street Address], [City]</li>
+      <li><a href="mailto:hello@yaninteriordesign.com"><span aria-hidden="true">&#9993;</span> hello@yaninteriordesign.com</a></li>
+      <li><span aria-hidden="true">&#9742;</span> (000) 000-0000</li>
+    </ul>
+    <div class="topbar-social">
+      <a href="#" aria-label="Instagram">IG</a>
+      <a href="#" aria-label="Facebook">FB</a>
+      <a href="#" aria-label="Pinterest">PIN</a>
+    </div>
+  </div>
+</div>
+
 <header class="site-header">
   <div class="container header-inner">
     <a href="#top" class="logo">
-      <svg class="logo-mark" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <svg class="logo-mark" width="30" height="30" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M14 26C14 26 5 21.5 5 12.5C5 7.5 9 3 14 3C19 3 23 7.5 23 12.5C23 21.5 14 26 14 26Z" stroke="currentColor" stroke-width="1.6"/>
         <path d="M14 26V8" stroke="currentColor" stroke-width="1.6"/>
       </svg>
-      <span>Yan Studio Design and Build</span>
+      <span class="logo-text">
+        <strong>Yan Studio</strong>
+        <em>Design &amp; Build</em>
+      </span>
     </a>
     <nav class="nav" id="nav">
-      <a href="#services">Services</a>
-      <a href="#work">Work</a>
+      <a href="#top">Home</a>
+      <a href="#about">About Us</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-trigger" id="servicesTrigger" aria-expanded="false">Services <span aria-hidden="true">&#9662;</span></button>
+        <div class="nav-dropdown-menu" id="servicesMenu">
+          <a href="#services">Design Consultation</a>
+          <a href="#services">Custom Fabrication</a>
+          <a href="#services">Full Space Styling</a>
+        </div>
+      </div>
+      <a href="#work">Projects</a>
       <a href="#craft">Craft</a>
-      <a href="#about">About</a>
-      <a href="#contact" class="nav-cta">Get a Quote</a>
+      <a href="#contact" class="nav-cta">Book a Consultation</a>
     </nav>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -39,83 +65,106 @@
   <section class="hero">
     <div class="container hero-inner">
       <div class="hero-copy">
-        <p class="eyebrow">Interior Design &amp; Custom Fabrication</p>
-        <h1>A space built<br>around how you<br>actually live.</h1>
-        <p class="hero-sub">We plan interiors and fabricate the furniture, millwork, and fixtures that go inside them — so design intent survives all the way to installation.</p>
+        <p class="eyebrow eyebrow-italic">Designing Spaces.</p>
+        <h1>Beautiful Interiors.<br><em>Inspired</em> Living.</h1>
+        <p class="hero-sub">We create elegant, functional interiors and fabricate the furniture and fixtures that go inside them — so design intent survives all the way to installation.</p>
         <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary">Start a project</a>
-          <a href="#work" class="btn btn-ghost">See our work</a>
+          <a href="#work" class="btn btn-dark">Explore Our Work</a>
+          <a href="#contact" class="btn btn-outline">Book a Consultation</a>
         </div>
-        <div class="hero-features">
-          <div class="hero-feature">
-            <span class="hero-feature-icon" aria-hidden="true">&#9670;</span>
-            <div>
-              <strong>Interior Design</strong>
-              <p>Tailored space planning</p>
-            </div>
+        <div class="hero-trust">
+          <div class="hero-avatars">
+            <img src="https://i.pravatar.cc/64?img=32" alt="" loading="lazy">
+            <img src="https://i.pravatar.cc/64?img=47" alt="" loading="lazy">
+            <img src="https://i.pravatar.cc/64?img=15" alt="" loading="lazy">
+            <img src="https://i.pravatar.cc/64?img=5" alt="" loading="lazy">
           </div>
-          <div class="hero-feature">
-            <span class="hero-feature-icon" aria-hidden="true">&#9670;</span>
-            <div>
-              <strong>Custom Fabrication</strong>
-              <p>Built in-house</p>
-            </div>
-          </div>
-          <div class="hero-feature">
-            <span class="hero-feature-icon" aria-hidden="true">&#9670;</span>
-            <div>
-              <strong>Space Styling</strong>
-              <p>Finishing touches</p>
-            </div>
-          </div>
-          <div class="hero-feature">
-            <span class="hero-feature-icon" aria-hidden="true">&#9670;</span>
-            <div>
-              <strong>Project Management</strong>
-              <p>One point of contact</p>
-            </div>
+          <div class="hero-trust-text">
+            <span class="hero-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span>Trusted by our happy clients <em>(placeholder)</em></span>
           </div>
         </div>
       </div>
       <div class="hero-visual">
-        <div class="hero-photo" style="background-image:url('https://loremflickr.com/900/1035/livingroom,interior/all?lock=101')" aria-hidden="true"></div>
-        <div class="hero-badge">Your Space<br>Awaits</div>
+        <div class="hero-ring hero-ring-a" aria-hidden="true"></div>
+        <div class="hero-ring hero-ring-b" aria-hidden="true"></div>
+        <div class="hero-photo" style="background-image:url('https://loremflickr.com/900/1035/livingroom,interior/all?lock=201')" aria-hidden="true"></div>
       </div>
     </div>
   </section>
 
-  <div class="wave" aria-hidden="true">
-    <svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,30 C300,60 900,0 1200,30 L1200,60 L0,60 Z"></path></svg>
+  <div class="feature-strip-wrap">
+    <div class="container">
+      <div class="feature-strip" data-reveal>
+        <div class="feature-item">
+          <span class="feature-icon" aria-hidden="true">&#9670;</span>
+          <strong>Interior Design</strong>
+          <p>Tailored space planning</p>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon" aria-hidden="true">&#9670;</span>
+          <strong>Custom Fabrication</strong>
+          <p>Built in-house</p>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon" aria-hidden="true">&#9670;</span>
+          <strong>Space Styling</strong>
+          <p>Finishing touches</p>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon" aria-hidden="true">&#9670;</span>
+          <strong>Project Management</strong>
+          <p>One point of contact</p>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <section id="about" class="about">
+    <div class="container about-inner">
+      <div class="about-photo" data-reveal>
+        <div class="about-img" style="background-image:url('https://loremflickr.com/700/860/diningroom,interior/all?lock=202')" aria-hidden="true"></div>
+      </div>
+      <div class="about-copy" data-reveal>
+        <p class="eyebrow">About Us</p>
+        <h2>Designing more than just spaces — we create experiences.</h2>
+        <p>Yan Studio Design and Build is a local studio pairing interior design with an in-house fabrication workshop — placeholder copy, replace with your company's real story, team, and history.</p>
+        <div class="about-checklist">
+          <div class="check-item"><span aria-hidden="true">&#10003;</span> Personalized Design Solutions</div>
+          <div class="check-item"><span aria-hidden="true">&#10003;</span> Creative &amp; Functional Layouts</div>
+          <div class="check-item"><span aria-hidden="true">&#10003;</span> High-Quality Materials</div>
+          <div class="check-item"><span aria-hidden="true">&#10003;</span> Client-Focused Approach</div>
+          <div class="check-item"><span aria-hidden="true">&#10003;</span> On-Time Project Delivery</div>
+          <div class="check-item"><span aria-hidden="true">&#10003;</span> Sustainably Sourced</div>
+        </div>
+        <a href="#contact" class="btn btn-dark">Learn More About Us</a>
+      </div>
+    </div>
+  </section>
 
   <section id="services" class="services">
     <div class="container">
-      <div class="services-panel">
-        <div class="services-intro" data-reveal>
-          <p class="eyebrow eyebrow-light">Discover Our Services</p>
-          <h2>Curated experiences,<br>built to last.</h2>
-          <p>From first sketch to final install, every project moves through design, fabrication, and styling under one roof.</p>
-          <a href="#contact" class="btn btn-primary">View all services</a>
+      <p class="eyebrow eyebrow-center">Discover Our Services</p>
+      <h2 class="section-title">Curated experiences, built to last</h2>
+      <p class="section-sub">From first sketch to final install, every project moves through design, fabrication, and styling under one roof.</p>
+      <div class="services-grid">
+        <div class="service-card" data-reveal>
+          <div class="service-photo" style="background-image:url('https://loremflickr.com/300/300/interior,design/all?lock=102')" aria-hidden="true"></div>
+          <h3>Design Consultation</h3>
+          <p>Space planning &amp; concept development</p>
+          <span class="service-price">From $150</span>
         </div>
-        <div class="services-grid">
-          <div class="service-card" data-reveal>
-            <div class="service-photo" style="background-image:url('https://loremflickr.com/300/300/interior,design/all?lock=102')" aria-hidden="true"></div>
-            <h3>Design Consultation</h3>
-            <p>Space planning &amp; concept development</p>
-            <span class="service-price">From $150</span>
-          </div>
-          <div class="service-card" data-reveal>
-            <div class="service-photo" style="background-image:url('https://loremflickr.com/300/300/woodworking,furniture/all?lock=103')" aria-hidden="true"></div>
-            <h3>Custom Fabrication</h3>
-            <p>Cabinetry, built-ins &amp; feature furniture</p>
-            <span class="service-price">Custom quote</span>
-          </div>
-          <div class="service-card" data-reveal>
-            <div class="service-photo" style="background-image:url('https://loremflickr.com/300/300/interior,decor/all?lock=104')" aria-hidden="true"></div>
-            <h3>Full Space Styling</h3>
-            <p>Sourcing, finishing &amp; final install</p>
-            <span class="service-price">From $600</span>
-          </div>
+        <div class="service-card" data-reveal>
+          <div class="service-photo" style="background-image:url('https://loremflickr.com/300/300/woodworking,furniture/all?lock=103')" aria-hidden="true"></div>
+          <h3>Custom Fabrication</h3>
+          <p>Cabinetry, built-ins &amp; feature furniture</p>
+          <span class="service-price">Custom quote</span>
+        </div>
+        <div class="service-card" data-reveal>
+          <div class="service-photo" style="background-image:url('https://loremflickr.com/300/300/interior,decor/all?lock=104')" aria-hidden="true"></div>
+          <h3>Full Space Styling</h3>
+          <p>Sourcing, finishing &amp; final install</p>
+          <span class="service-price">From $600</span>
         </div>
       </div>
     </div>
@@ -123,9 +172,14 @@
 
   <section id="work" class="work">
     <div class="container">
-      <p class="eyebrow eyebrow-center">Featured Projects</p>
-      <h2 class="section-title">Recent work</h2>
-      <p class="section-sub">Placeholder gallery — swap these for real project photos.</p>
+      <div class="work-heading">
+        <div>
+          <p class="eyebrow">Our Projects</p>
+          <h2 class="section-title-left">Spaces we're proud of</h2>
+        </div>
+        <a href="#contact" class="view-all-link">View all projects <span aria-hidden="true">&#8594;</span></a>
+      </div>
+      <p class="section-sub-left">Placeholder gallery — swap these for real project photos.</p>
 
       <div class="work-filters" role="group" aria-label="Filter projects by category">
         <button class="filter-btn is-active" data-filter="all">All</button>
@@ -136,63 +190,57 @@
 
       <div class="work-grid" id="workGrid">
         <div class="work-item" data-category="residential" data-reveal>
-          <div class="work-thumb" style="background-image:url('https://loremflickr.com/800/600/livingroom,interior/all?lock=105')" aria-hidden="true"></div>
+          <div class="work-thumb" style="background-image:url('https://loremflickr.com/800/600/livingroom,interior/all?lock=105')" aria-hidden="true">
+            <span class="work-pill">Residential</span>
+          </div>
           <div class="work-info">
-            <div>
-              <strong>Residential Living Room</strong>
-              <p>Full redesign &amp; build</p>
-            </div>
-            <span class="work-plus" aria-hidden="true">+</span>
+            <strong>Residential Living Room</strong>
+            <p><span aria-hidden="true">&#128205;</span> [City], [Region]</p>
           </div>
         </div>
         <div class="work-item" data-category="commercial" data-reveal>
-          <div class="work-thumb" style="background-image:url('https://loremflickr.com/800/600/retail,boutique/all?lock=106')" aria-hidden="true"></div>
+          <div class="work-thumb" style="background-image:url('https://loremflickr.com/800/600/retail,boutique/all?lock=106')" aria-hidden="true">
+            <span class="work-pill">Commercial</span>
+          </div>
           <div class="work-info">
-            <div>
-              <strong>Boutique Retail Fit-out</strong>
-              <p>Commercial interior</p>
-            </div>
-            <span class="work-plus" aria-hidden="true">+</span>
+            <strong>Boutique Retail Fit-out</strong>
+            <p><span aria-hidden="true">&#128205;</span> [City], [Region]</p>
           </div>
         </div>
         <div class="work-item" data-category="fabrication" data-reveal>
-          <div class="work-thumb" style="background-image:url('https://loremflickr.com/800/600/kitchen,cabinetry/all?lock=107')" aria-hidden="true"></div>
+          <div class="work-thumb" style="background-image:url('https://loremflickr.com/800/600/kitchen,cabinetry/all?lock=107')" aria-hidden="true">
+            <span class="work-pill">Fabrication</span>
+          </div>
           <div class="work-info">
-            <div>
-              <strong>Custom Kitchen Millwork</strong>
-              <p>Cabinetry fabrication</p>
-            </div>
-            <span class="work-plus" aria-hidden="true">+</span>
+            <strong>Custom Kitchen Millwork</strong>
+            <p><span aria-hidden="true">&#128205;</span> [City], [Region]</p>
           </div>
         </div>
         <div class="work-item" data-category="residential" data-reveal>
-          <div class="work-thumb" style="background-image:url('https://loremflickr.com/800/600/bedroom,interior/all?lock=108')" aria-hidden="true"></div>
+          <div class="work-thumb" style="background-image:url('https://loremflickr.com/800/600/bedroom,interior/all?lock=108')" aria-hidden="true">
+            <span class="work-pill">Residential</span>
+          </div>
           <div class="work-info">
-            <div>
-              <strong>Primary Bedroom Suite</strong>
-              <p>Full redesign &amp; styling</p>
-            </div>
-            <span class="work-plus" aria-hidden="true">+</span>
+            <strong>Primary Bedroom Suite</strong>
+            <p><span aria-hidden="true">&#128205;</span> [City], [Region]</p>
           </div>
         </div>
         <div class="work-item" data-category="commercial" data-reveal>
-          <div class="work-thumb" style="background-image:url('https://loremflickr.com/800/600/office,reception/all?lock=109')" aria-hidden="true"></div>
+          <div class="work-thumb" style="background-image:url('https://loremflickr.com/800/600/office,reception/all?lock=109')" aria-hidden="true">
+            <span class="work-pill">Commercial</span>
+          </div>
           <div class="work-info">
-            <div>
-              <strong>Office Reception Build</strong>
-              <p>Commercial fit-out</p>
-            </div>
-            <span class="work-plus" aria-hidden="true">+</span>
+            <strong>Office Reception Build</strong>
+            <p><span aria-hidden="true">&#128205;</span> [City], [Region]</p>
           </div>
         </div>
         <div class="work-item" data-category="fabrication" data-reveal>
-          <div class="work-thumb" style="background-image:url('https://loremflickr.com/800/600/furniture,carpentry/all?lock=110')" aria-hidden="true"></div>
+          <div class="work-thumb" style="background-image:url('https://loremflickr.com/800/600/furniture,carpentry/all?lock=110')" aria-hidden="true">
+            <span class="work-pill">Fabrication</span>
+          </div>
           <div class="work-info">
-            <div>
-              <strong>Built-in Media Console</strong>
-              <p>Custom furniture fabrication</p>
-            </div>
-            <span class="work-plus" aria-hidden="true">+</span>
+            <strong>Built-in Media Console</strong>
+            <p><span aria-hidden="true">&#128205;</span> [City], [Region]</p>
           </div>
         </div>
       </div>
@@ -229,7 +277,7 @@
           <p class="eyebrow eyebrow-light">Our Craftsmanship</p>
           <h2>Designed and built<br>under one roof.</h2>
           <p>Because the people who design the space are the same people who build it, details survive the handoff — no lost intent between drawing and delivery.</p>
-          <a href="#work" class="btn btn-primary">View our work</a>
+          <a href="#work" class="btn btn-outline-light">View our work</a>
           <div class="craft-points">
             <div class="craft-point"><span aria-hidden="true">&#9670;</span> Sustainably Sourced</div>
             <div class="craft-point"><span aria-hidden="true">&#9670;</span> Handcrafted Detail</div>
@@ -244,11 +292,71 @@
     </div>
   </section>
 
-  <section id="about" class="about">
-    <div class="container about-inner" data-reveal>
-      <p class="eyebrow eyebrow-center">About Us</p>
-      <h2 class="section-title">A local studio, built on trust</h2>
-      <p>Yan Studio Design and Build is a local studio pairing interior design with an in-house fabrication workshop — placeholder copy, replace with your company's real story, team, and history.</p>
+  <section class="stats">
+    <div class="container stats-grid">
+      <div class="stat-item" data-reveal>
+        <span class="stat-icon" aria-hidden="true">&#9670;</span>
+        <span class="stat-number" data-count="10" data-suffix="+">0</span>
+        <p>Years of Experience</p>
+      </div>
+      <div class="stat-item" data-reveal>
+        <span class="stat-icon" aria-hidden="true">&#9670;</span>
+        <span class="stat-number" data-count="250" data-suffix="+">0</span>
+        <p>Projects Completed</p>
+      </div>
+      <div class="stat-item" data-reveal>
+        <span class="stat-icon" aria-hidden="true">&#9670;</span>
+        <span class="stat-number" data-count="98" data-suffix="%">0</span>
+        <p>Happy Clients</p>
+      </div>
+      <div class="stat-item" data-reveal>
+        <span class="stat-icon" aria-hidden="true">&#9670;</span>
+        <span class="stat-number" data-count="15" data-suffix="+">0</span>
+        <p>Design Awards</p>
+      </div>
+    </div>
+    <p class="stats-note">Placeholder figures — replace with your studio's real numbers.</p>
+  </section>
+
+  <section class="testimonials">
+    <div class="container">
+      <p class="eyebrow eyebrow-center">Client Stories</p>
+      <h2 class="section-title">Trusted by homeowners &amp; businesses alike</h2>
+      <p class="section-sub">Placeholder testimonials — replace with real client quotes.</p>
+
+      <div class="testimonial-carousel">
+        <button class="carousel-arrow carousel-prev" aria-label="Previous testimonials">&#8592;</button>
+        <div class="testimonial-track" id="testimonialTrack">
+          <div class="testimonial-card">
+            <span class="quote-mark" aria-hidden="true">&#8220;</span>
+            <span class="testimonial-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <p>"Yan Studio completely transformed our home. Their attention to detail is incredible." <em>(placeholder)</em></p>
+            <div class="testimonial-person">
+              <img src="https://i.pravatar.cc/72?img=33" alt="" loading="lazy">
+              <div><strong>Client Name</strong><span>[City], [Region]</span></div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <span class="quote-mark" aria-hidden="true">&#8220;</span>
+            <span class="testimonial-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <p>"Professional, creative, and so easy to work with. Highly recommended." <em>(placeholder)</em></p>
+            <div class="testimonial-person">
+              <img src="https://i.pravatar.cc/72?img=51" alt="" loading="lazy">
+              <div><strong>Client Name</strong><span>[City], [Region]</span></div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <span class="quote-mark" aria-hidden="true">&#8220;</span>
+            <span class="testimonial-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <p>"They turned our vision into reality. Our office looks absolutely amazing." <em>(placeholder)</em></p>
+            <div class="testimonial-person">
+              <img src="https://i.pravatar.cc/72?img=68" alt="" loading="lazy">
+              <div><strong>Client Name</strong><span>[City], [Region]</span></div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-arrow carousel-next" aria-label="Next testimonials">&#8594;</button>
+      </div>
     </div>
   </section>
 
@@ -294,24 +402,59 @@
 </main>
 
 <footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="footer-brand">
-      <span class="logo-mark-footer" aria-hidden="true">
-        <svg width="22" height="22" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <div class="container footer-grid">
+    <div class="footer-col footer-brand-col">
+      <a href="#top" class="logo footer-logo">
+        <svg width="26" height="26" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M14 26C14 26 5 21.5 5 12.5C5 7.5 9 3 14 3C19 3 23 7.5 23 12.5C23 21.5 14 26 14 26Z" stroke="currentColor" stroke-width="1.6"/>
           <path d="M14 26V8" stroke="currentColor" stroke-width="1.6"/>
         </svg>
-      </span>
-      Yan Studio Design and Build
+        <span class="logo-text">
+          <strong>Yan Studio</strong>
+          <em>Design &amp; Build</em>
+        </span>
+      </a>
+      <p>Creating beautiful, functional, and timeless spaces that inspire the way you live and work.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="Facebook">FB</a>
+        <a href="#" aria-label="Pinterest">PIN</a>
+      </div>
     </div>
-    <div class="footer-newsletter">
-      <span>Join our newsletter</span>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="#about">About Us</a>
+      <a href="#services">Services</a>
+      <a href="#work">Projects</a>
+      <a href="#contact">Contact Us</a>
+    </div>
+    <div class="footer-col">
+      <h4>Our Services</h4>
+      <a href="#services">Design Consultation</a>
+      <a href="#services">Custom Fabrication</a>
+      <a href="#services">Full Space Styling</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <p><span aria-hidden="true">&#128205;</span> [Street Address], [City]</p>
+      <p><span aria-hidden="true">&#9742;</span> (000) 000-0000</p>
+      <p><span aria-hidden="true">&#9993;</span> <a href="mailto:hello@yaninteriordesign.com">hello@yaninteriordesign.com</a></p>
+    </div>
+    <div class="footer-col">
+      <h4>Stay Inspired</h4>
+      <p>Get design tips, trends, and exclusive updates.</p>
       <form class="newsletter-form" onsubmit="return false;">
-        <input type="email" placeholder="Your email" aria-label="Email address">
-        <button type="submit" class="btn btn-primary">Subscribe</button>
+        <input type="email" placeholder="Enter your email" aria-label="Email address">
+        <button type="submit" class="btn btn-outline-light">Subscribe</button>
       </form>
     </div>
-    <p class="footer-copy">&copy; <span id="year"></span> Yan Studio Design and Build. All rights reserved.</p>
+  </div>
+  <div class="container footer-bottom">
+    <p>&copy; <span id="year"></span> Yan Studio Design and Build. All rights reserved.</p>
+    <div class="footer-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+    </div>
   </div>
 </footer>
 

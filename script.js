@@ -72,3 +72,77 @@ if (prefersReducedMotion || !('IntersectionObserver' in window)) {
     revealObserver.observe(el);
   });
 }
+
+// Services nav dropdown
+const servicesTrigger = document.getElementById('servicesTrigger');
+const servicesMenu = document.getElementById('servicesMenu');
+
+const closeServicesMenu = () => {
+  servicesMenu.classList.remove('is-open');
+  servicesTrigger.setAttribute('aria-expanded', 'false');
+};
+
+servicesTrigger.addEventListener('click', (event) => {
+  event.stopPropagation();
+  const isOpen = servicesMenu.classList.toggle('is-open');
+  servicesTrigger.setAttribute('aria-expanded', String(isOpen));
+});
+
+document.addEventListener('click', (event) => {
+  if (!event.target.closest('.nav-dropdown')) closeServicesMenu();
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') closeServicesMenu();
+});
+
+// Testimonial carousel
+const testimonialTrack = document.getElementById('testimonialTrack');
+const carouselPrev = document.querySelector('.carousel-prev');
+const carouselNext = document.querySelector('.carousel-next');
+
+const scrollTestimonials = (direction) => {
+  const card = testimonialTrack.querySelector('.testimonial-card');
+  if (!card) return;
+  const distance = card.getBoundingClientRect().width + 24;
+  testimonialTrack.scrollBy({ left: distance * direction, behavior: 'smooth' });
+};
+
+carouselPrev.addEventListener('click', () => scrollTestimonials(-1));
+carouselNext.addEventListener('click', () => scrollTestimonials(1));
+
+// Stat count-up
+const statNumbers = document.querySelectorAll('.stat-number');
+
+const animateCount = (el) => {
+  const target = Number(el.dataset.count);
+  const suffix = el.dataset.suffix || '';
+  const duration = 1400;
+  const start = performance.now();
+
+  const step = (now) => {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.round(target * eased) + suffix;
+    if (progress < 1) requestAnimationFrame(step);
+  };
+
+  requestAnimationFrame(step);
+};
+
+if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+  statNumbers.forEach((el) => { el.textContent = el.dataset.count + (el.dataset.suffix || ''); });
+} else {
+  const statObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+  statNumbers.forEach((el) => statObserver.observe(el));
+}
