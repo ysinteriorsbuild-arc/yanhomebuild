@@ -1,4 +1,4 @@
-# Interior Design Project
+# yanhomebuild
 
 Landing page for a local interior design + fabrication company, with a HubSpot contact form for the marketing team.
 
