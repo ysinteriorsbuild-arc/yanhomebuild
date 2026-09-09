@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio Fabrica — Interior Design & Fabrication</title>
+<meta name="description" content="Studio Fabrica designs and fabricates custom interiors — from concept to built-in furniture, for homes and commercial spaces.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#top" class="logo">Studio Fabrica</a>
+    <nav class="nav" id="nav">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <p class="eyebrow">Interior Design &amp; Custom Fabrication</p>
+      <h1>Spaces designed, built, and finished by one team.</h1>
+      <p class="hero-sub">We plan interiors and fabricate the furniture, millwork, and fixtures that go inside them — so design intent survives all the way to installation.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Start a project</a>
+        <a href="#work" class="btn btn-ghost">See our work</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <div class="container">
+      <h2>What we do</h2>
+      <div class="service-grid">
+        <div class="service-card">
+          <h3>Interior Design</h3>
+          <p>Space planning, material selection, and full-room concepts for residential and commercial interiors.</p>
+        </div>
+        <div class="service-card">
+          <h3>Custom Fabrication</h3>
+          <p>In-house build of cabinetry, built-ins, and feature furniture — made to the exact spec of the design.</p>
+        </div>
+        <div class="service-card">
+          <h3>Project Management</h3>
+          <p>One point of contact from first sketch to final install, coordinating trades and timelines.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" class="work">
+    <div class="container">
+      <h2>Recent work</h2>
+      <p class="section-sub">Placeholder gallery — swap these for real project photos.</p>
+      <div class="work-grid">
+        <div class="work-item"><div class="work-thumb" aria-hidden="true"></div><p>Residential Living Room</p></div>
+        <div class="work-item"><div class="work-thumb" aria-hidden="true"></div><p>Boutique Retail Fit-out</p></div>
+        <div class="work-item"><div class="work-thumb" aria-hidden="true"></div><p>Custom Kitchen Millwork</p></div>
+        <div class="work-item"><div class="work-thumb" aria-hidden="true"></div><p>Office Reception Build</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="container about-inner">
+      <div>
+        <h2>Design and fabrication, under one roof</h2>
+        <p>Studio Fabrica is a local studio pairing interior design with an in-house fabrication workshop. Because the people who design the space are the same people who build it, details survive the handoff — no lost intent between drawing and delivery.</p>
+        <p>Placeholder copy — replace with your company's real story, team, and history.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container contact-inner">
+      <div class="contact-intro">
+        <h2>Talk to our team</h2>
+        <p>Tell us about your space and we'll get back to you.</p>
+      </div>
+
+      <!--
+        HubSpot form embed — placeholder IDs.
+        Replace YOUR_PORTAL_ID and YOUR_FORM_ID with the values from
+        HubSpot: Marketing > Forms > your form > Embed code.
+      -->
+      <div class="hs-form-wrapper">
+        <div id="hubspotForm"></div>
+        <script src="https://js.hsforms.net/forms/embed/v2.js"></script>
+        <script>
+          if (window.hbspt) {
+            hbspt.forms.create({
+              portalId: "YOUR_PORTAL_ID",
+              formId: "YOUR_FORM_ID",
+              target: "#hubspotForm"
+            });
+          }
+        </script>
+        <noscript>
+          <p>Please enable JavaScript to view the contact form, or email us directly at
+            <a href="mailto:hello@example.com">hello@example.com</a>.
+          </p>
+        </noscript>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>&copy; <span id="year"></span> Studio Fabrica. All rights reserved.</p>
+    <p class="footer-note">Local Interior Design &amp; Fabrication Company — placeholder site content.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
