@@ -22,5 +22,5 @@ npx serve .
 
 Static site, deployable as-is. Currently connected to:
 
-- **Cloudflare Workers** — auto-deploys from `main` via `npx wrangler deploy` (config in `wrangler.toml`, serves this directory as static assets). Bind the custom domain under Workers & Pages > yanhomebuild > Domains.
-- **GitHub Pages** — also enabled as a fallback/mirror at `ysinteriorsbuild-arc.github.io/yanhomebuild` (config: `CNAME` file + repo Pages settings).
+- **Cloudflare Workers** (primary) — auto-deploys from `main` via `npx wrangler deploy` (config in `wrangler.toml`, serves this directory as static assets). Custom domain `yaninteriordesign.com` is bound under Workers & Pages > yanhomebuild > Domains, which handles DNS + SSL automatically.
+- **GitHub Pages** (fallback/mirror) — still enabled at `https://ysinteriorsbuild-arc.github.io/yanhomebuild/`, no custom domain attached.
