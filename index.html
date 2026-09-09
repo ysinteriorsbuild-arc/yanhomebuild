@@ -126,8 +126,16 @@
       <p class="eyebrow eyebrow-center">Featured Projects</p>
       <h2 class="section-title">Recent work</h2>
       <p class="section-sub">Placeholder gallery — swap these for real project photos.</p>
-      <div class="work-grid">
-        <div class="work-item">
+
+      <div class="work-filters" role="group" aria-label="Filter projects by category">
+        <button class="filter-btn is-active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="residential">Residential</button>
+        <button class="filter-btn" data-filter="commercial">Commercial</button>
+        <button class="filter-btn" data-filter="fabrication">Fabrication</button>
+      </div>
+
+      <div class="work-grid" id="workGrid">
+        <div class="work-item" data-category="residential">
           <div class="work-thumb" aria-hidden="true"></div>
           <div class="work-info">
             <div>
@@ -137,7 +145,7 @@
             <span class="work-plus" aria-hidden="true">+</span>
           </div>
         </div>
-        <div class="work-item">
+        <div class="work-item" data-category="commercial">
           <div class="work-thumb" aria-hidden="true"></div>
           <div class="work-info">
             <div>
@@ -147,7 +155,7 @@
             <span class="work-plus" aria-hidden="true">+</span>
           </div>
         </div>
-        <div class="work-item">
+        <div class="work-item" data-category="fabrication">
           <div class="work-thumb" aria-hidden="true"></div>
           <div class="work-info">
             <div>
@@ -155,6 +163,59 @@
               <p>Cabinetry fabrication</p>
             </div>
             <span class="work-plus" aria-hidden="true">+</span>
+          </div>
+        </div>
+        <div class="work-item" data-category="residential">
+          <div class="work-thumb" aria-hidden="true"></div>
+          <div class="work-info">
+            <div>
+              <strong>Primary Bedroom Suite</strong>
+              <p>Full redesign &amp; styling</p>
+            </div>
+            <span class="work-plus" aria-hidden="true">+</span>
+          </div>
+        </div>
+        <div class="work-item" data-category="commercial">
+          <div class="work-thumb" aria-hidden="true"></div>
+          <div class="work-info">
+            <div>
+              <strong>Office Reception Build</strong>
+              <p>Commercial fit-out</p>
+            </div>
+            <span class="work-plus" aria-hidden="true">+</span>
+          </div>
+        </div>
+        <div class="work-item" data-category="fabrication">
+          <div class="work-thumb" aria-hidden="true"></div>
+          <div class="work-info">
+            <div>
+              <strong>Built-in Media Console</strong>
+              <p>Custom furniture fabrication</p>
+            </div>
+            <span class="work-plus" aria-hidden="true">+</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="before-after-block">
+        <p class="eyebrow eyebrow-center">See The Transformation</p>
+        <h3 class="ba-title">Before &amp; after</h3>
+        <div class="ba-grid">
+          <div class="ba-slider" data-ba>
+            <div class="ba-after" aria-hidden="true"></div>
+            <div class="ba-before" aria-hidden="true"></div>
+            <input type="range" min="0" max="100" value="50" class="ba-range" aria-label="Drag to compare before and after">
+            <div class="ba-handle" aria-hidden="true"></div>
+            <span class="ba-label ba-label-before">Before</span>
+            <span class="ba-label ba-label-after">After</span>
+          </div>
+          <div class="ba-slider" data-ba>
+            <div class="ba-after ba-after-alt" aria-hidden="true"></div>
+            <div class="ba-before ba-before-alt" aria-hidden="true"></div>
+            <input type="range" min="0" max="100" value="50" class="ba-range" aria-label="Drag to compare before and after">
+            <div class="ba-handle" aria-hidden="true"></div>
+            <span class="ba-label ba-label-before">Before</span>
+            <span class="ba-label ba-label-after">After</span>
           </div>
         </div>
       </div>
