@@ -2,6 +2,16 @@
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
+// Header gains a subtle shadow/border once the page has scrolled
+const siteHeader = document.querySelector<HTMLElement>('.site-header');
+if (siteHeader) {
+  const updateHeaderState = () => {
+    siteHeader.classList.toggle('is-scrolled', window.scrollY > 8);
+  };
+  updateHeaderState();
+  window.addEventListener('scroll', updateHeaderState, { passive: true });
+}
+
 // Mobile nav toggle
 const navToggle = document.getElementById('navToggle');
 const nav = document.getElementById('nav');
@@ -126,7 +136,7 @@ if (prefersReducedMotion || !('IntersectionObserver' in window)) {
   );
 
   revealEls.forEach((el, index) => {
-    el.style.transitionDelay = `${Math.min(index % 3, 2) * 0.08}s`;
+    el.style.transitionDelay = `${Math.min(index % 4, 3) * 0.07}s`;
     revealObserver.observe(el);
   });
 }

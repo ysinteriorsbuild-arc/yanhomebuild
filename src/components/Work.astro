@@ -137,10 +137,16 @@
 
   .work-item.is-hidden { display: none; }
 
+  .work-item { transition: transform 0.45s var(--ease); }
+  .work-item:hover { transform: translateY(-6px); }
+
   .work-thumb {
     aspect-ratio: 4 / 3;
     overflow: hidden;
+    transition: box-shadow 0.45s var(--ease);
   }
+
+  .work-item:hover .work-thumb { box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); }
 
   .work-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s var(--ease); }
   .work-item:hover .work-thumb img { transform: scale(1.04); }

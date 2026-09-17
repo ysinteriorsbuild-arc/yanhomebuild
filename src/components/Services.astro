@@ -60,7 +60,16 @@
 
   .service {
     padding: 28px;
+    transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease);
   }
+
+  .service:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  .service img { transition: transform 0.5s var(--ease); }
+  .service:hover img { transform: scale(1.06); }
 
   .service-num {
     display: block;
