@@ -1,0 +1,70 @@
+<section class="stats">
+  <div class="container stats-grid">
+    <div class="stat reveal">
+      <span class="stat-number" data-count="10" data-suffix="+">0</span>
+      <span class="stat-label">Years of Experience</span>
+    </div>
+    <div class="stat reveal">
+      <span class="stat-number" data-count="250" data-suffix="+">0</span>
+      <span class="stat-label">Projects Completed</span>
+    </div>
+    <div class="stat reveal">
+      <span class="stat-number" data-count="98" data-suffix="%">0</span>
+      <span class="stat-label">Happy Clients</span>
+    </div>
+    <div class="stat reveal">
+      <span class="stat-number" data-count="15" data-suffix="+">0</span>
+      <span class="stat-label">Design Awards</span>
+    </div>
+  </div>
+  <p class="stats-note container">Placeholder figures — replace with your studio's real numbers.</p>
+</section>
+
+<style>
+  .stats {
+    padding: 90px 0 32px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .stat {
+    text-align: center;
+    border-left: 1px solid var(--line);
+    padding: 0 16px;
+  }
+
+  .stat:first-child { border-left: none; }
+
+  .stat-number {
+    display: block;
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: clamp(2rem, 3.2vw, 2.8rem);
+    letter-spacing: -0.02em;
+  }
+
+  .stat-label {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .stats-note {
+    text-align: center;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    opacity: 0.6;
+    margin: 28px auto 0;
+  }
+
+  @media (max-width: 720px) {
+    .stats-grid { grid-template-columns: 1fr 1fr; row-gap: 32px; }
+    .stat:nth-child(3) { border-left: none; }
+  }
+</style>

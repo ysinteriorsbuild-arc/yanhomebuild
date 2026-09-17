@@ -1,0 +1,75 @@
+<section class="section section-tight" id="craft">
+  <div class="container craft-inner">
+    <div class="craft-copy reveal">
+      <p class="eyebrow">Our Craftsmanship</p>
+      <h2>Designed and built under one roof.</h2>
+      <p class="lede">
+        Because the people who design the space are the same people who build it,
+        details survive the handoff — no lost intent between drawing and delivery.
+      </p>
+      <ul class="craft-points">
+        <li>Sustainably Sourced</li>
+        <li>Handcrafted Detail</li>
+        <li>Local Partnerships</li>
+      </ul>
+      <a href="#work" class="btn">View Our Work</a>
+    </div>
+    <div class="craft-photos reveal">
+      <div class="craft-photo">
+        <img src="https://images.pexels.com/photos/37162560/pexels-photo-37162560.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Workshop materials" width="600" height="800" loading="lazy" />
+      </div>
+      <div class="craft-photo craft-photo-b">
+        <img src="https://images.pexels.com/photos/34520428/pexels-photo-34520428.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Craft workshop" width="600" height="800" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .craft-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 72px;
+    align-items: center;
+  }
+
+  .craft-points {
+    list-style: none;
+    padding: 0;
+    margin: 28px 0 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .craft-points li {
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding-left: 18px;
+    position: relative;
+  }
+
+  .craft-points li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 8px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .craft-photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .craft-photo { aspect-ratio: 3 / 4; overflow: hidden; border: 1px solid var(--line); }
+  .craft-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .craft-photo-b { margin-top: 32px; }
+
+  @media (max-width: 860px) {
+    .craft-inner { grid-template-columns: 1fr; gap: 40px; }
+  }
+</style>

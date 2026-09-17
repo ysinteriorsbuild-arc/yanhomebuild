@@ -1,0 +1,107 @@
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="#top" class="logo">
+        <img src="/assets/logo-mark.png" width="34" height="36" alt="Yan Studio Design &amp; Build" />
+        <span class="logo-text">
+          <strong>Yan Studio</strong>
+          <em>Design &amp; Build</em>
+        </span>
+      </a>
+      <p>Curated Spaces, Built for Living.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="#about">About Us</a>
+      <a href="#services">Services</a>
+      <a href="#work">Projects</a>
+      <a href="#contact">Contact Us</a>
+    </div>
+    <div class="footer-col">
+      <h4>Our Services</h4>
+      <a href="#services">Design Consultation</a>
+      <a href="#services">Custom Fabrication</a>
+      <a href="#services">Full Space Styling</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <p>[Street Address], [City]</p>
+      <p>(000) 000-0000</p>
+      <p><a href="mailto:hello@yaninteriordesign.com">hello@yaninteriordesign.com</a></p>
+    </div>
+    <div class="footer-col">
+      <h4>Stay Inspired</h4>
+      <p>Get design tips, trends, and exclusive updates.</p>
+      <form class="newsletter-form" onsubmit="return false;">
+        <input type="email" placeholder="Enter your email" aria-label="Email address" />
+        <button type="submit" class="btn">Subscribe</button>
+      </form>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>&copy; <span id="year"></span> Yan Studio Design &amp; Build Sdn Bhd. All rights reserved.</p>
+    <div class="footer-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--line);
+    padding: 80px 0 0;
+    color: var(--text-muted);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr 1.1fr 1.2fr;
+    gap: 40px;
+    padding-bottom: 56px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .footer-brand .logo { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+  .footer-brand img { filter: drop-shadow(0 0 8px rgba(201, 162, 39, 0.3)); }
+  .footer-brand .logo-text strong { color: var(--text); font-size: 0.98rem; font-weight: 700; }
+  .footer-brand .logo-text em {
+    font-style: normal; font-size: 0.6rem; letter-spacing: 0.2em;
+    text-transform: uppercase; display: block;
+    background: var(--gold-gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .footer-brand p { font-size: 0.85rem; margin: 0; }
+
+  .footer-col h4 { color: var(--text); margin-bottom: 18px; }
+  .footer-col a { display: block; font-size: 0.85rem; margin-bottom: 11px; transition: color 0.3s var(--ease); }
+  .footer-col a:hover { color: var(--gold); }
+  .footer-col p { font-size: 0.85rem; margin-bottom: 8px; }
+
+  .newsletter-form { display: flex; gap: 8px; margin-top: 8px; }
+  .newsletter-form input {
+    flex: 1; min-width: 0; padding: 10px 14px;
+    border: 1px solid var(--line-strong); background: transparent;
+    color: var(--text); font-family: var(--font); font-size: 0.82rem;
+  }
+  .newsletter-form .btn { padding: 10px 16px; font-size: 0.8rem; }
+
+  .footer-bottom {
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 12px; padding: 22px var(--gutter); font-size: 0.76rem;
+  }
+  .footer-bottom p { margin: 0; opacity: 0.6; }
+  .footer-legal { display: flex; gap: 20px; }
+  .footer-legal a { opacity: 0.6; transition: opacity 0.3s var(--ease); }
+  .footer-legal a:hover { opacity: 1; color: var(--gold); }
+
+  @media (max-width: 1024px) {
+    .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+  }
+  @media (max-width: 640px) {
+    .footer-grid { grid-template-columns: 1fr; padding-bottom: 32px; }
+    .footer-bottom { justify-content: center; text-align: center; }
+  }
+</style>

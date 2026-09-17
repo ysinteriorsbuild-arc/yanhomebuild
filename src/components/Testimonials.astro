@@ -1,0 +1,95 @@
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">Client Stories</p>
+        <h2>Trusted by homeowners &amp; businesses</h2>
+      </div>
+      <div class="carousel-controls">
+        <button class="carousel-arrow carousel-prev" aria-label="Previous testimonials">&#8592;</button>
+        <button class="carousel-arrow carousel-next" aria-label="Next testimonials">&#8594;</button>
+      </div>
+    </div>
+
+    <div class="testimonial-track" id="testimonialTrack">
+      <article class="testimonial reveal">
+        <p>&ldquo;Yan Studio completely transformed our home. Their attention to detail is incredible.&rdquo; <em>(placeholder)</em></p>
+        <div class="testimonial-person">
+          <span class="avatar">A</span>
+          <div><strong>Client Name</strong><span>[City], [Region]</span></div>
+        </div>
+      </article>
+      <article class="testimonial reveal">
+        <p>&ldquo;Professional, creative, and so easy to work with. Highly recommended.&rdquo; <em>(placeholder)</em></p>
+        <div class="testimonial-person">
+          <span class="avatar">B</span>
+          <div><strong>Client Name</strong><span>[City], [Region]</span></div>
+        </div>
+      </article>
+      <article class="testimonial reveal">
+        <p>&ldquo;They turned our vision into reality. Our office looks absolutely amazing.&rdquo; <em>(placeholder)</em></p>
+        <div class="testimonial-person">
+          <span class="avatar">C</span>
+          <div><strong>Client Name</strong><span>[City], [Region]</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .carousel-controls { display: flex; gap: 10px; }
+
+  .carousel-arrow {
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--line-strong);
+    background: none;
+    color: var(--text);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: border-color 0.3s var(--ease), color 0.3s var(--ease);
+  }
+
+  .carousel-arrow:hover { border-color: var(--gold); color: var(--gold); }
+
+  .testimonial-track {
+    display: flex;
+    gap: 40px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .testimonial-track::-webkit-scrollbar { display: none; }
+
+  .testimonial {
+    scroll-snap-align: start;
+    flex: 0 0 100%;
+    border-top: 1px solid var(--line);
+    padding-top: 28px;
+  }
+
+  .testimonial p { color: var(--text); font-size: 1rem; margin-bottom: 24px; }
+  .testimonial p em { font-style: normal; color: var(--text-muted); font-size: 0.78rem; }
+
+  .testimonial-person { display: flex; align-items: center; gap: 12px; }
+
+  .avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border: 1px solid var(--line-strong);
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .testimonial-person strong { display: block; font-size: 0.88rem; }
+  .testimonial-person span { font-size: 0.78rem; color: var(--text-muted); }
+
+  @media (min-width: 860px) {
+    .testimonial { flex-basis: calc(33.333% - 27px); }
+  }
+</style>

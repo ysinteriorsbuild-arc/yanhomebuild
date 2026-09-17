@@ -1,0 +1,243 @@
+<section class="section" id="work">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">Our Projects</p>
+        <h2>Spaces we're proud of</h2>
+      </div>
+      <div class="work-filters" role="group" aria-label="Filter projects by category">
+        <button class="filter-btn is-active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="residential">Residential</button>
+        <button class="filter-btn" data-filter="commercial">Commercial</button>
+        <button class="filter-btn" data-filter="fabrication">Fabrication</button>
+      </div>
+    </div>
+
+    <div class="work-grid" id="workGrid">
+      <div class="work-item reveal" data-category="residential">
+        <div class="work-thumb">
+          <img src="https://images.pexels.com/photos/28539228/pexels-photo-28539228.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Residential living room" width="800" height="600" loading="lazy" />
+        </div>
+        <div class="work-info">
+          <strong>Residential Living Room</strong>
+          <span>[City], [Region]</span>
+        </div>
+      </div>
+
+      <div class="work-item reveal" data-category="commercial">
+        <div class="work-thumb">
+          <img src="https://images.pexels.com/photos/31318445/pexels-photo-31318445.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Boutique retail fit-out" width="800" height="600" loading="lazy" />
+        </div>
+        <div class="work-info">
+          <strong>Boutique Retail Fit-out</strong>
+          <span>[City], [Region]</span>
+        </div>
+      </div>
+
+      <div class="work-item reveal" data-category="fabrication">
+        <div class="work-thumb">
+          <img src="https://images.pexels.com/photos/32062853/pexels-photo-32062853.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Custom kitchen millwork" width="800" height="600" loading="lazy" />
+        </div>
+        <div class="work-info">
+          <strong>Custom Kitchen Millwork</strong>
+          <span>[City], [Region]</span>
+        </div>
+      </div>
+
+      <div class="work-item reveal" data-category="residential">
+        <div class="work-thumb">
+          <img src="https://images.pexels.com/photos/16436912/pexels-photo-16436912.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Primary bedroom suite" width="800" height="600" loading="lazy" />
+        </div>
+        <div class="work-info">
+          <strong>Primary Bedroom Suite</strong>
+          <span>[City], [Region]</span>
+        </div>
+      </div>
+
+      <div class="work-item reveal" data-category="commercial">
+        <div class="work-thumb">
+          <img src="https://images.pexels.com/photos/32334270/pexels-photo-32334270.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Office reception build" width="800" height="600" loading="lazy" />
+        </div>
+        <div class="work-info">
+          <strong>Office Reception Build</strong>
+          <span>[City], [Region]</span>
+        </div>
+      </div>
+
+      <div class="work-item reveal" data-category="fabrication">
+        <div class="work-thumb">
+          <img src="https://images.pexels.com/photos/14957889/pexels-photo-14957889.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Built-in media console" width="800" height="600" loading="lazy" />
+        </div>
+        <div class="work-info">
+          <strong>Built-in Media Console</strong>
+          <span>[City], [Region]</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-block reveal">
+      <p class="eyebrow">See The Transformation</p>
+      <h3 class="ba-title">Before &amp; after</h3>
+      <div class="ba-grid">
+        <div class="ba-slider" data-ba>
+          <img class="ba-after" src="https://images.pexels.com/photos/29012625/pexels-photo-29012625.jpeg?auto=compress&cs=tinysrgb&w=800" alt="After renovation" />
+          <div class="ba-before-wrap">
+            <img class="ba-before" src="https://images.pexels.com/photos/35493907/pexels-photo-35493907.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Before renovation" />
+          </div>
+          <input type="range" min="0" max="100" value="50" class="ba-range" aria-label="Drag to compare before and after" />
+          <div class="ba-handle"></div>
+          <span class="ba-label ba-label-before">Before</span>
+          <span class="ba-label ba-label-after">After</span>
+        </div>
+        <div class="ba-slider" data-ba>
+          <img class="ba-after" src="https://images.pexels.com/photos/27390284/pexels-photo-27390284.jpeg?auto=compress&cs=tinysrgb&w=800" alt="After renovation" />
+          <div class="ba-before-wrap">
+            <img class="ba-before" src="https://images.pexels.com/photos/36035073/pexels-photo-36035073.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Before renovation" />
+          </div>
+          <input type="range" min="0" max="100" value="50" class="ba-range" aria-label="Drag to compare before and after" />
+          <div class="ba-handle"></div>
+          <span class="ba-label ba-label-before">Before</span>
+          <span class="ba-label ba-label-after">After</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .work-filters { display: flex; gap: 28px; }
+
+  .filter-btn {
+    background: none;
+    border: none;
+    padding: 0 0 6px;
+    font-family: var(--font);
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    border-bottom: 1px solid transparent;
+    cursor: pointer;
+    transition: color 0.3s var(--ease), border-color 0.3s var(--ease);
+  }
+
+  .filter-btn:hover { color: var(--text); }
+  .filter-btn.is-active {
+    border-color: var(--gold);
+    background: var(--gold-gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+
+  .work-item.is-hidden { display: none; }
+
+  .work-thumb {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border: 1px solid var(--line);
+  }
+
+  .work-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s var(--ease); }
+  .work-item:hover .work-thumb img { transform: scale(1.04); }
+
+  .work-info { margin-top: 16px; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+  .work-info strong { font-size: 0.95rem; font-weight: 600; }
+  .work-info span { font-size: 0.78rem; color: var(--text-muted); }
+
+  .ba-block { margin-top: 120px; }
+  .ba-title { margin-bottom: 40px; }
+
+  .ba-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .ba-slider {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border: 1px solid var(--line-strong);
+    user-select: none;
+  }
+
+  .ba-after, .ba-before-wrap img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ba-before-wrap {
+    position: absolute;
+    inset: 0;
+    clip-path: inset(0 50% 0 0);
+    overflow: hidden;
+  }
+
+  .ba-range {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: ew-resize;
+  }
+
+  .ba-handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.8);
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+
+  .ba-handle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #fff;
+    transform: translate(-50%, -50%);
+  }
+
+  .ba-label {
+    position: absolute;
+    bottom: 14px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+    background: rgba(10, 10, 10, 0.65);
+    padding: 5px 11px;
+    pointer-events: none;
+  }
+
+  .ba-label-before { left: 14px; }
+  .ba-label-after { right: 14px; }
+
+  @media (max-width: 860px) {
+    .section-head { align-items: flex-start; }
+    .work-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+    .ba-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 560px) {
+    .work-grid { grid-template-columns: 1fr; }
+  }
+</style>

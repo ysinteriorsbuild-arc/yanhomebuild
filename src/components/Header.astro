@@ -1,0 +1,133 @@
+<header class="site-header">
+  <div class="container topbar">
+    <span>[Street Address], [City]</span>
+    <span class="topbar-sep">/</span>
+    <a href="mailto:hello@yaninteriordesign.com">hello@yaninteriordesign.com</a>
+    <span class="topbar-sep">/</span>
+    <span>(000) 000-0000</span>
+  </div>
+  <div class="container header-inner">
+    <a href="#top" class="logo">
+      <img src="/assets/logo-mark.png" width="46" height="48" alt="Yan Studio Design &amp; Build" />
+      <span class="logo-text">
+        <strong>Yan Studio</strong>
+        <em>Design &amp; Build</em>
+      </span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#work">Projects</a>
+      <a href="#craft">Craft</a>
+      <a href="#contact" class="btn btn-primary nav-cta">Book a Consultation</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(10, 10, 10, 0.86);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .topbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px var(--gutter);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--line);
+    letter-spacing: 0.02em;
+  }
+
+  .topbar-sep { opacity: 0.4; }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px var(--gutter);
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .logo img {
+    filter: drop-shadow(0 0 10px rgba(201, 162, 39, 0.35));
+  }
+
+  .logo-text { display: flex; flex-direction: column; line-height: 1.15; }
+  .logo-text strong { font-size: 1.02rem; font-weight: 700; letter-spacing: 0; }
+  .logo-text em {
+    font-style: normal;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    background: var(--gold-gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+  }
+
+  .nav > a:not(.nav-cta) {
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    color: var(--text-muted);
+    transition: color 0.3s var(--ease);
+  }
+
+  .nav > a:not(.nav-cta):hover { color: var(--text); }
+
+  .nav-cta { padding: 11px 22px; }
+
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .nav-toggle span { display: block; height: 1px; background: var(--text); }
+
+  @media (max-width: 860px) {
+    .topbar { display: none; }
+    .nav {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--line);
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 24px var(--gutter);
+      gap: 20px;
+      display: none;
+    }
+    .nav.open { display: flex; }
+    .nav-toggle { display: flex; }
+  }
+</style>
