@@ -9,6 +9,7 @@
   --gold-dim: #8a7226;
   --gold-gradient: linear-gradient(135deg, #f3da8a 0%, #d9ae3f 28%, #a87c1e 62%, #edc768 100%);
   --gold-gradient-text: linear-gradient(100deg, #e9c877 0%, #c9a227 35%, #8a6f1f 60%, #eecf83 100%);
+  --line-gradient: linear-gradient(135deg, #4a3216 0%, #c9932c 32%, #f0c93e 62%, #fff6b0 100%);
 
   --font: 'Poppins', system-ui, sans-serif;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
@@ -121,6 +122,15 @@ p { margin: 0 0 18px; color: var(--text-muted); font-weight: 400; }
   border: none;
   border-top: 1px solid var(--line);
   margin: 0;
+}
+
+/* Seamless gradient hairline border — double-background technique,
+   avoids the banding/aliasing you get from border-image with gradients. */
+.gradient-border {
+  border: 1px solid transparent;
+  background-image: linear-gradient(var(--bg), var(--bg)), var(--line-gradient);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
 }
 
 .reveal {
