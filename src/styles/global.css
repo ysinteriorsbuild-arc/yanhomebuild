@@ -7,8 +7,8 @@
   --line-strong: rgba(255, 255, 255, 0.16);
   --gold: #c9a227;
   --gold-dim: #8a7226;
-  --gold-gradient: linear-gradient(135deg, #f3da8a 0%, #d9ae3f 28%, #a87c1e 62%, #edc768 100%);
-  --gold-gradient-text: linear-gradient(100deg, #e9c877 0%, #c9a227 35%, #8a6f1f 60%, #eecf83 100%);
+  --gold-gradient: linear-gradient(135deg, #f3da8a 0%, #d9ae3f 28%, #cfa241 62%, #edc768 100%);
+  --gold-gradient-text: linear-gradient(100deg, #e9c877 0%, #c9a227 35%, #bda765 60%, #eecf83 100%);
   --line-gradient: linear-gradient(135deg, #4a3216 0%, #c9932c 32%, #f0c93e 62%, #fff6b0 100%);
 
   --font: 'Poppins', system-ui, sans-serif;
@@ -38,10 +38,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Ambient background — navy base, a faint slow-drifting photograph
-   of twisted wood/gold material for texture, and a soft light wash
-   that lightens toward white near the top. Sits behind all content;
-   kept low-opacity so body copy stays fully legible. */
 .ambient-bg {
   position: fixed;
   inset: 0;
@@ -57,7 +53,7 @@ body {
   background-image: url('/assets/bg-ribbon.jpg');
   background-size: cover;
   background-position: center;
-  opacity: 0.12;
+  opacity: 0.33;
   animation: ambient-pan 70s ease-in-out infinite;
 }
 
@@ -66,25 +62,31 @@ body {
   50% { transform: scale(1.14) translate(-1.5%, 1.2%); }
 }
 
-/* Palette lifted from the navy/gold mountain reference: deep navy
-   shadow at the base, through a bronze-gold vein band, up to a warm
-   near-white glow at the brightest point (the peak). */
+
 .ambient-light {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    var(--bg) 0%,
-    var(--bg) 30%,
-    rgba(30, 48, 80, 0.55) 46%,
-    rgba(120, 92, 58, 0.5) 64%,
-    rgba(210, 168, 96, 0.55) 82%,
-    rgba(247, 236, 214, 0.6) 100%
-  );
+  inset: -10%;
+  background:
+    radial-gradient(58% 38% at 50% 4%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 60%),
+    linear-gradient(
+      to bottom,
+      rgba(58, 99, 168, 0.75) 0%,
+      rgba(20, 38, 66, 0.5) 22%,
+      rgba(5, 11, 22, 0.7) 50%,
+      rgba(20, 38, 66, 0.5) 78%,
+      rgba(240, 230, 210, 0.7) 100%
+    );
+  animation: ambient-drift 85s ease-in-out infinite alternate;
+}
+
+@keyframes ambient-drift {
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.09) translate(-2.5%, 1.8%); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ambient-material { animation: none; }
+  .ambient-material,
+  .ambient-light { animation: none; }
 }
 
 img { display: block; max-width: 100%; }
@@ -128,13 +130,16 @@ p { margin: 0 0 18px; color: var(--text-muted); font-weight: 400; }
 
 .lede { font-size: 1.1rem; line-height: 1.65; max-width: 46ch; }
 
-/* Buttons — sharp, line-led, not filled pills */
+/* Buttons — pill-rounded, line-led, not filled squares */
 .btn {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 10px;
   padding: 15px 28px;
   border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  overflow: hidden;
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -154,6 +159,32 @@ p { margin: 0 0 18px; color: var(--text-muted); font-weight: 400; }
 }
 
 .btn-primary:hover { background-position: 100% 100%; border-color: transparent; }
+
+/* Gold glimmer sweep — a diagonal highlight drifts across primary/CTA
+   buttons on a loop, screen-blended so it reads as a shine on the metal
+   gradient instead of washing out the button label. */
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.85), transparent);
+  mix-blend-mode: screen;
+  transform: rotate(8deg);
+  pointer-events: none;
+  animation: btn-glimmer 3.4s ease-in-out infinite;
+}
+
+@keyframes btn-glimmer {
+  0%, 18% { left: -60%; }
+  55%, 100% { left: 140%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary::after { animation: none; display: none; }
+}
 
 /* Section rhythm */
 .section { padding: 140px 0; }

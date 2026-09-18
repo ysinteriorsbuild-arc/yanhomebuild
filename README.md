@@ -1,9 +1,9 @@
 # Yan Studio Design & Build — Website
 
-Rebuilt on [Astro](https://astro.build) with a "refined dark luxury" design: near-black
-background, gold used sparingly as a metallic-gradient accent (not a fill), sharp edges,
-type-scale-driven hierarchy. Component-based, ready to wire up to a headless CMS later
-for self-service content editing.
+Rebuilt on [Astro](https://astro.build) with a "refined dark luxury" design: deep navy
+background, gold used sparingly as a metallic-gradient accent (not a fill), an animated
+ambient gradient, sharp edges, type-scale-driven hierarchy. Component-based, ready to
+wire up to a headless CMS later for self-service content editing.
 
 ## Structure
 
@@ -48,12 +48,13 @@ npm run preview    # preview the production build locally
   `(placeholder)` inline — replace with real figures/quotes before launch.
 - **Prices** — service pricing is in MYR (RM 500 / Custom quote / RM 2,200), placeholder
   amounts — adjust to your real rates in `src/components/Services.astro`.
-- **Top bar & footer contact info** — phone number, street address, and social links
-  (`#` hrefs) are placeholders.
+- **Top bar & footer contact info** — city and phone are real (Kuala Lumpur, Malaysia;
+  +60 19-390 4786) but there's no street address yet, and social links (`#` hrefs) are
+  still placeholders.
 - **HubSpot form** — in `src/components/Contact.astro`, set `portalId` and `formId` to
   your real values from HubSpot: Marketing > Forms > your form > Embed code.
-- **Contact details** — the address/hours in the contact section and the
-  `hello@yaninteriordesign.com` fallback email are placeholders.
+- **Project & testimonial locations** — city/state tags on the Projects and Client
+  Stories sections are placeholder Malaysian cities, not real project sites.
 
 ## Deploy
 
