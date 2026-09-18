@@ -66,15 +66,20 @@ body {
   50% { transform: scale(1.14) translate(-1.5%, 1.2%); }
 }
 
+/* Palette lifted from the navy/gold mountain reference: deep navy
+   shadow at the base, through a bronze-gold vein band, up to a warm
+   near-white glow at the brightest point (the peak). */
 .ambient-light {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to top,
     var(--bg) 0%,
-    var(--bg) 45%,
-    rgba(120, 150, 195, 0.16) 72%,
-    rgba(226, 234, 245, 0.35) 100%
+    var(--bg) 30%,
+    rgba(30, 48, 80, 0.55) 46%,
+    rgba(120, 92, 58, 0.5) 64%,
+    rgba(210, 168, 96, 0.55) 82%,
+    rgba(247, 236, 214, 0.6) 100%
   );
 }
 
