@@ -11,9 +11,38 @@
       </ul>
     </div>
 
-    <!-- HubSpot form embed — Yaninteriordesign contact form -->
+    <!-- Custom form, submitted directly to HubSpot's Forms API —
+         HubSpot's own embedded widget renders inside a cross-origin
+         iframe (their default now), which blocks any site styling
+         from reaching it. This form matches the site design and
+         posts straight to the same HubSpot form/portal. -->
     <div class="hs-form-wrapper gradient-border reveal">
-      <div id="hubspotForm"></div>
+      <form id="contactForm" class="contact-form">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="firstname">First Name</label>
+            <input type="text" id="firstname" name="firstname" autocomplete="given-name" />
+          </div>
+          <div class="form-field">
+            <label for="lastname">Last Name</label>
+            <input type="text" id="lastname" name="lastname" autocomplete="family-name" />
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="email">Email<span class="required">*</span></label>
+          <input type="email" id="email" name="email" autocomplete="email" required />
+        </div>
+        <div class="form-field">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+60" />
+        </div>
+        <div class="form-field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary form-submit">Submit</button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
       <noscript>
         <p>Please enable JavaScript to view the contact form, or email us directly at
           <a href="mailto:ysinteriors.build@gmail.com">ysinteriors.build@gmail.com</a>.
@@ -23,16 +52,54 @@
   </div>
 </section>
 
-<script src="https://js.hsforms.net/forms/embed/v2.js" is:inline></script>
 <script is:inline>
-  if (window.hbspt) {
-    window.hbspt.forms.create({
-      region: 'na2',
-      portalId: '247428879',
-      formId: '07e1f7ab-5d9e-42b3-b1cc-52e95a603b7b',
-      target: '#hubspotForm',
+  (function () {
+    var form = document.getElementById('contactForm');
+    if (!form) return;
+    var status = document.getElementById('formStatus');
+    var portalId = '247428879';
+    var formGuid = '07e1f7ab-5d9e-42b3-b1cc-52e95a603b7b';
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      var submitBtn = form.querySelector('.form-submit');
+      submitBtn.disabled = true;
+      status.textContent = 'Sending...';
+      status.className = 'form-status';
+
+      var fields = ['firstname', 'lastname', 'email', 'phone', 'message']
+        .map(function (name) {
+          var el = form.elements.namedItem(name);
+          return { name: name, value: el ? el.value : '' };
+        })
+        .filter(function (field) { return field.value.trim() !== ''; });
+
+      fetch('https://api.hsforms.com/submissions/v3/integration/submit/' + portalId + '/' + formGuid, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fields: fields,
+          context: {
+            pageUri: window.location.href,
+            pageName: document.title,
+          },
+        }),
+      })
+        .then(function (response) {
+          if (!response.ok) throw new Error('Submission failed');
+          form.reset();
+          status.textContent = "Thanks — we've received your message and will get back to you soon.";
+          status.classList.add('is-success');
+        })
+        .catch(function () {
+          status.textContent = 'Something went wrong sending that. Please email us directly instead.';
+          status.classList.add('is-error');
+        })
+        .finally(function () {
+          submitBtn.disabled = false;
+        });
     });
-  }
+  })();
 </script>
 
 <style>
@@ -61,7 +128,76 @@
     border-radius: 14px;
   }
 
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .form-field label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--text-muted);
+  }
+
+  .required { color: var(--gold); margin-left: 2px; }
+
+  .form-field input,
+  .form-field textarea {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1px solid var(--line-strong);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 0.92rem;
+    transition: border-color 0.3s var(--ease), background 0.3s var(--ease);
+  }
+
+  .form-field textarea { resize: vertical; min-height: 96px; }
+
+  .form-field input:focus,
+  .form-field textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .form-field input::placeholder,
+  .form-field textarea::placeholder { color: var(--text-muted); opacity: 0.7; }
+
+  .form-submit { align-self: flex-start; margin-top: 6px; }
+  .form-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+
+  .form-status {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    min-height: 1.2em;
+  }
+
+  .form-status.is-success { color: var(--gold); }
+  .form-status.is-error { color: #e08a6f; }
+
   @media (max-width: 860px) {
     .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+  }
+
+  @media (max-width: 520px) {
+    .form-row { grid-template-columns: 1fr; }
   }
 </style>
