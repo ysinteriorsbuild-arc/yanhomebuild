@@ -1,0 +1,189 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { newsArticles } from '../../data/news';
+
+export function getStaticPaths() {
+  return newsArticles.map((article) => ({
+    params: { slug: article.slug },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+
+const related = newsArticles.filter((item) => item.slug !== article.slug).slice(0, 3);
+---
+
+<Layout title={`${article.title} — Yan Studio Design & Build Sdn Bhd`} description={article.excerpt}>
+  <Header />
+  <main>
+    <article class="article">
+      <div class="container article-head reveal">
+        <p class="eyebrow">{article.tag}</p>
+        <h1>{article.title}</h1>
+        <span class="article-date">{article.date}</span>
+      </div>
+
+      <div class="container article-image reveal">
+        <img src={article.image} alt={article.title} width="1200" height="640" />
+      </div>
+
+      <div class="container article-body">
+        {article.intro.map((paragraph) => <p class="lede">{paragraph}</p>)}
+
+        {
+          article.sections.map((section) => (
+            <div class="article-section">
+              {section.heading && <h2>{section.heading}</h2>}
+              {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+            </div>
+          ))
+        }
+
+        {
+          article.takeaways && article.takeaways.length > 0 && (
+            <div class="article-takeaways gradient-border">
+              <h4>Key Takeaways</h4>
+              <ul>
+                {article.takeaways.map((point) => <li>{point}</li>)}
+              </ul>
+            </div>
+          )
+        }
+
+        {article.closing && <p class="article-closing">{article.closing}</p>}
+
+        <a href="/#contact" class="btn btn-primary">Book a Consultation</a>
+      </div>
+    </article>
+
+    {
+      related.length > 0 && (
+        <section class="section-tight related">
+          <div class="container">
+            <div class="section-head reveal">
+              <h2>More From Us</h2>
+            </div>
+            <div class="related-grid">
+              {related.map((item) => (
+                <a class="related-card gradient-border reveal" href={`/news/${item.slug}/`}>
+                  <div class="related-card-image">
+                    <img src={item.image} alt={item.title} loading="lazy" width="500" height="330" />
+                  </div>
+                  <div class="related-card-body">
+                    <span class="news-card-date">{item.date}</span>
+                    <h3>{item.title}</h3>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      )
+    }
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .article-head {
+    max-width: 820px;
+    padding: 200px var(--gutter) 32px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .article-head h1 { font-size: clamp(2.1rem, 4.2vw, 3rem); }
+
+  .article-date {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--gold);
+  }
+
+  .article-image {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+
+  .article-image img {
+    width: 100%;
+    aspect-ratio: 16 / 8;
+    object-fit: cover;
+    border-radius: 18px;
+  }
+
+  .article-body {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px var(--gutter) 0;
+  }
+
+  .article-section { margin-top: 36px; }
+  .article-section h2 { font-size: 1.4rem; margin-bottom: 14px; }
+  .article-section p { color: var(--text-muted); }
+
+  .article-takeaways {
+    margin-top: 44px;
+    padding: 28px 32px;
+    border-radius: 16px;
+  }
+
+  .article-takeaways h4 { color: var(--gold); margin-bottom: 16px; }
+  .article-takeaways ul { margin: 0; padding-left: 20px; color: var(--text-muted); }
+  .article-takeaways li { margin-bottom: 10px; }
+  .article-takeaways li:last-child { margin-bottom: 0; }
+
+  .article-closing { margin-top: 32px; font-size: 1.02rem; }
+
+  .article-body .btn-primary { margin-top: 8px; }
+
+  .related { border-top: 1px solid var(--line); margin-top: 100px; }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .related-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease);
+  }
+
+  .related-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
+  }
+
+  .related-card-image { aspect-ratio: 3 / 2; overflow: hidden; }
+  .related-card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease); }
+  .related-card:hover .related-card-image img { transform: scale(1.06); }
+
+  .related-card-body { padding: 18px 20px; display: flex; flex-direction: column; gap: 8px; }
+  .related-card-body h3 { margin: 0; font-size: 0.98rem; line-height: 1.35; }
+
+  .news-card-date {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--gold);
+  }
+
+  @media (max-width: 960px) {
+    .related-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 640px) {
+    .article-head { padding: 160px var(--gutter) 24px; }
+    .related-grid { grid-template-columns: 1fr; }
+  }
+</style>

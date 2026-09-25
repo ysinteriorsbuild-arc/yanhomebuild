@@ -1,0 +1,136 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { newsArticles } from '../../data/news';
+---
+
+<Layout
+  title="News & Articles — Yan Studio Design & Build Sdn Bhd"
+  description="Design ideas, material guides and process notes from Yan Studio Design & Build Sdn Bhd."
+>
+  <Header />
+  <main>
+    <section class="news-hero">
+      <div class="container news-hero-inner reveal">
+        <p class="eyebrow">News &amp; Articles</p>
+        <h1>Ideas, guides and notes from the studio</h1>
+        <p class="lede">
+          Design tips, material guides, and a closer look at how we take a project from first
+          sketch to finished space.
+        </p>
+      </div>
+    </section>
+
+    <section class="section-tight">
+      <div class="container news-grid">
+        {
+          newsArticles.map((article) => (
+            <a class="news-card gradient-border reveal" href={`/news/${article.slug}/`}>
+              <div class="news-card-image">
+                <img src={article.image} alt={article.title} loading="lazy" width="600" height="400" />
+                <span class="news-card-tag">{article.tag}</span>
+              </div>
+              <div class="news-card-body">
+                <span class="news-card-date">{article.date}</span>
+                <h3>{article.title}</h3>
+                <p>{article.excerpt}</p>
+                <span class="news-card-link">Read Article &rarr;</span>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .news-hero {
+    padding: 200px 0 80px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .news-hero-inner { max-width: 760px; }
+  .news-hero-inner h1 { font-size: clamp(2.4rem, 4.6vw, 3.6rem); }
+
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .news-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease);
+  }
+
+  .news-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  .news-card-image {
+    position: relative;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+  }
+
+  .news-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s var(--ease);
+  }
+
+  .news-card:hover .news-card-image img { transform: scale(1.06); }
+
+  .news-card-tag {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--bg);
+    background: var(--gold-gradient);
+  }
+
+  .news-card-body { padding: 24px; display: flex; flex-direction: column; gap: 10px; }
+
+  .news-card-date {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--gold);
+  }
+
+  .news-card-body h3 { margin: 0; font-size: 1.08rem; line-height: 1.35; }
+  .news-card-body p { font-size: 0.88rem; margin: 0; flex: 1; }
+
+  .news-card-link {
+    margin-top: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text);
+    transition: color 0.3s var(--ease);
+  }
+
+  .news-card:hover .news-card-link { color: var(--gold); }
+
+  @media (max-width: 960px) {
+    .news-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 640px) {
+    .news-hero { padding: 160px 0 56px; }
+    .news-grid { grid-template-columns: 1fr; }
+  }
+</style>
